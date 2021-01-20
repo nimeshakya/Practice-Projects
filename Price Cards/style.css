@@ -1,0 +1,170 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+:root {
+    --primary-colour: rgb(46, 46, 46);
+    --secondary-colour: #577dfa;
+    --backgroud-match: rgb(238, 238, 238);
+    --tartiary-colour: rgb(197, 197, 197);
+    --logo-colour: rgb(85, 255, 85);
+
+    --primary-font: 'Roboto', sans-serif;
+    --display-font: 'Staatliches', cursive;
+    --fun-font: 'Major Mono Display', monospace;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* End of Global Styles */
+
+/* Background */
+.background {
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--backgroud-match);
+    padding: 20px 10px;
+    font-family: var(--primary-font);
+}
+/* End of Background */
+
+/* Cards Style */
+
+.pricing {
+    margin: 50px 0;
+    width: 80%;
+    flex-direction: column;
+}
+
+.pricing-page-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--primary-colour);
+}
+
+.cards {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    border-radius: 5px;
+    color: rgb(250, 250, 250);
+    position: relative;
+    margin: 60px 0;
+    perspective: 50rem;
+}
+
+.front-card {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: var(--secondary-colour);
+    box-shadow: 0 2px 10px rgb(85, 85, 85);
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px 0;
+    top: 0;
+    z-index: 10;
+    opacity: 0.9;
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
+}
+
+.card-title {
+    font-size: 1.3rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    margin: 90px 0;
+}
+
+.goback-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.5rem;
+    color: #ccc8c8;
+}
+
+.purchase-btn {
+    width: 100px;
+    height: 30px;
+    background-color: var(--backgroud-match);
+    border: none;
+    box-shadow: 2px 2px 10px rgb(99, 99, 99);
+    color: var(--secondary-colour);
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.back-card {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--secondary-colour);
+    /* visibility: hidden; */
+    border-radius: 5px;
+    transform: translateZ(-1.5rem) translateX(1.2rem);
+    opacity: 0.5;
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
+}
+
+/* Style when front and back are toggled */
+.change > .front-card {
+    transform: translateZ(-1.5rem) translateX(1.2rem);
+    box-shadow: 0 2px 10px var(--tartiary-colour);
+    background-color: var(--secondary-colour);
+    opacity: 0.5;
+    z-index: 0;
+}
+.change > .back-card {
+    transform: translateZ(0) translateX(0);
+    box-shadow: 0 2px 10px rgb(85, 85, 85);
+    opacity: 0.9;
+    z-index: 10;
+}
+/* ==== */
+
+.features {
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    margin-bottom: 60px;
+}
+
+.feature {
+    line-height: 50px;
+}
+
+.standard .features {
+    margin-bottom: 40px;
+}
+
+.premium .features {
+    margin-bottom: 20px;
+}
+
+/* End of Cards Style */
+
+@media screen and (max-width: 1090px) {
+    .cards {
+        flex-direction: column;
+    }
+}
